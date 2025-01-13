@@ -1,3 +1,33 @@
+# Smart India Hackathon 2024 Finalist - Crop Marketplace App
+
+This project was developed for the **Smart India Hackathon 2024 (Finalist)** hosted at **IIT Hyderabad**. It is a mobile application that allows users to buy fresh crops directly from farmers, cutting out the middlemen, thus reducing costs by 25%. The app was built using **React Native** and **Expo** with features like real-time crop price predictions, Firebase backend integration, and Google Authentication.
+
+## Key Features
+- **Direct Buying from Farmers**: The app enables users to buy fresh crops directly from farmers, bypassing middlemen and reducing the overall cost by 25%.
+- **Seamless Navigation**: Implemented **Expo Router** for seamless navigation throughout the app.
+- **Real-Time Updates**: Integrated **Expo Notifications** to provide users with real-time updates on their orders and crop prices.
+- **Firebase Backend**: Used **Firebase** as the Backend-as-a-Service (BaaS) for user authentication, cloud storage, and database management.
+- **Google Authentication**: Integrated **Google Authentication** for secure and easy user login.
+- **Crop Price Prediction AI**: Developed an AI model using **TensorFlow** to predict future crop prices, helping users make informed buying decisions.
+- **Cloud Deployment**: Deployed the AI model API on **Replit cloud**, making the predictions live and accessible in real-time.
+
+## Technologies Used
+- **React Native**: For building cross-platform mobile apps.
+- **Expo**: Framework for easier development and deployment of React Native apps.
+- **Firebase**: Used for database management, authentication, and cloud storage.
+- **TensorFlow**: Used to create an AI model for crop price prediction.
+- **Expo Notifications**: Used for real-time notifications in the app.
+- **Replit Cloud**: Used to deploy the crop price prediction API.
+
+## Installation Instructions
+
+### 1. Clone the Repository
+First, clone the repository to your local machine:
+```bash
+git clone https://github.com/bhanushakya2004/Smart-India-Hackathon-Project.git
+cd Smart-India-Hackathon-Project
+
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
