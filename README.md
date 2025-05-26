@@ -1,80 +1,139 @@
-# Smart India Hackathon 2024 Finalist - Crop Marketplace App
+# Business Directory App (with Crop Marketplace Feature)
 
-This project was developed for the **Smart India Hackathon 2024 (Finalist)** hosted at **IIT Hyderabad**. It is a mobile application that allows users to buy fresh crops directly from farmers, cutting out the middlemen, thus reducing costs by 25%. The app was built using **React Native** and **Expo** with features like real-time crop price predictions, Firebase backend integration, and Google Authentication.
+This mobile application, built with React Native and Expo, serves as a comprehensive **Business Directory**. A key feature includes a dedicated marketplace for users to buy fresh crops directly from farmers, aiming to reduce costs and connect producers with consumers more efficiently. The project also incorporates features like real-time crop price predictions (via a TensorFlow model deployed on Replit Cloud), Firebase backend integration for data management and user authentication (including Google Authentication via Clerk).
+
+This project was initially developed as a finalist for the Smart India Hackathon 2024.
 
 ## Key Features
-- **Direct Buying from Farmers**: The app enables users to buy fresh crops directly from farmers, bypassing middlemen and reducing the overall cost by 25%.
-- **Seamless Navigation**: Implemented **Expo Router** for seamless navigation throughout the app.
-- **Real-Time Updates**: Integrated **Expo Notifications** to provide users with real-time updates on their orders and crop prices.
-- **Firebase Backend**: Used **Firebase** as the Backend-as-a-Service (BaaS) for user authentication, cloud storage, and database management.
-- **Google Authentication**: Integrated **Google Authentication** for secure and easy user login.
-- **Crop Price Prediction AI**: Developed an AI model using **TensorFlow** to predict future crop prices, helping users make informed buying decisions.
-- **Cloud Deployment**: Deployed the AI model API on **Replit cloud**, making the predictions live and accessible in real-time.
+
+*   **Business Listings & Categories:** Browse and search for various businesses. Businesses are organized into categories for easy navigation.
+*   **Detailed Business Profiles:** View detailed information about each business, including contact details, services, and user reviews.
+*   **User Authentication:** Secure sign-up and login functionality using Clerk, including Google Authentication.
+*   **User Profiles:** Users can manage their profiles and view their activity.
+*   **Crop Marketplace (Special Feature):**
+    *   **Direct Buying from Farmers:** Enables users to purchase fresh crops directly from farmers.
+    *   **AI-Powered Crop Price Prediction:** Utilizes a TensorFlow model (deployed on Replit Cloud) to provide users with predicted future crop prices, aiding informed purchasing decisions.
+*   **Order Management:** Users can track their orders (especially relevant for the crop marketplace).
+*   **Real-Time Updates:** Uses Expo Notifications for updates on orders, prices, or other relevant information.
+*   **Seamless Navigation:** Implemented with Expo Router for a smooth user experience.
+*   **Firebase Integration:** Leverages Firebase for backend services including Firestore database, storage, and potentially other features.
 
 ## Technologies Used
-- **React Native**: For building cross-platform mobile apps.
-- **Expo**: Framework for easier development and deployment of React Native apps.
-- **Firebase**: Used for database management, authentication, and cloud storage.
-- **TensorFlow**: Used to create an AI model for crop price prediction.
-- **Expo Notifications**: Used for real-time notifications in the app.
-- **Replit Cloud**: Used to deploy the crop price prediction API.
 
-## Installation Instructions
+*   **React Native & Expo:** For cross-platform mobile app development.
+*   **Expo Router:** For navigation within the app.
+*   **Clerk:** For user authentication, including Google Sign-In.
+*   **Firebase:** As a Backend-as-a-Service (BaaS) for database (Firestore), cloud storage, and other backend functionalities.
+*   **TensorFlow:** For developing the AI model for crop price prediction.
+*   **Replit Cloud:** For hosting the crop price prediction API.
+*   **Expo Notifications:** For push notifications and real-time updates.
 
-### 1. Clone the Repository
-First, clone the repository to your local machine:
-```bash
-git clone https://github.com/bhanushakya2004/Smart-India-Hackathon-Project.git
-cd Smart-India-Hackathon-Project
+## Project Structure
 
+The project follows a standard React Native (Expo) structure:
 
-# Welcome to your Expo app 👋
+-   **/app:** Contains the main application screens and navigation setup, using Expo's file-based routing.
+    -   **/app/(tabs):** Defines the layout and screens for tab-based navigation (e.g., Home, Explore, Profile).
+    -   **/app/business:** Screens related to managing business listings.
+    -   **/app/businessdetail:** Screen for displaying detailed information about a specific business.
+    -   **/app/businesslist:** Screen for listing businesses, likely filtered by category.
+-   **/components:** Reusable UI components used across different screens. Organized by feature or commonality (e.g., `Home`, `BusinessDetail`, `Profile`).
+-   **/assets:** Static assets like images, fonts, etc.
+-   **/configs:** Configuration files, such as Firebase setup (`FirebaseConfig.js`).
+-   **/constants:** Global constants like color schemes (`Colors.ts`).
+-   **/hooks:** Custom React hooks (e.g., `useWarmUpBrowser.jsx`).
+-   **/scripts:** Utility scripts for the project (e.g., `reset-project.js`).
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Getting Started
 
-## Get started
+Follow these instructions to set up and run the project on your local machine.
 
-1. Install dependencies
+### Prerequisites
 
-   ```bash
-   npm install
-   ```
+*   **Node.js:** Make sure you have Node.js installed (LTS version recommended). You can download it from [nodejs.org](https://nodejs.org/).
+*   **Expo CLI:** Install the Expo CLI globally if you haven't already:
+    ```bash
+    npm install -g expo-cli
+    ```
+*   **Git:** For cloning the repository.
 
-2. Start the app
+### Installation & Setup
 
-   ```bash
+1.  **Clone the Repository:**
+    Replace the URL and folder name with your project's specific details.
+    ```bash
+    git clone https://github.com/your-username/your-repository-name.git
+    cd your-repository-name
+    ```
+
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up Environment Variables:**
+    This project uses Clerk for authentication. You'll need to create a `.env` file in the root of the project and add your Clerk Publishable Key:
+    ```env
+    EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key_here
+    ```
+    Replace `your_clerk_publishable_key_here` with your actual key. You can obtain this key from your Clerk dashboard.
+
+### Running the Application
+
+1.  **Start the Development Server:**
+    ```bash
     npx expo start
-   ```
+    ```
+    This command will start the Metro Bundler.
 
-In the output, you'll find options to open the app in a
+2.  **Run on a Device or Emulator:**
+    Once the Metro Bundler is running, it will provide several options:
+    *   **Scan the QR code:** Use the Expo Go app (available on Android and iOS) to scan the QR code displayed in the terminal. This will run the app on your physical device.
+    *   **Press `a`:** To run on an Android emulator or connected Android device.
+    *   **Press `i`:** To run on an iOS simulator (macOS only) or connected iOS device.
+    *   **Press `w`:** To run in a web browser.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+    Refer to the [Expo documentation](https://docs.expo.dev/workflow/run-on-device/) for more detailed instructions on running the app.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Running Tests
 
-## Get a fresh project
-
-When you're ready, run:
-
+To run the automated tests for this project:
 ```bash
-npm run reset-project
+npm test
 ```
+This command executes Jest tests, typically in watch mode as configured in `package.json`.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Linting
 
-## Learn more
+To check the code for linting errors and maintain code quality:
+```bash
+npm run lint
+```
+This command uses `expo lint` to analyze the codebase.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Contributions are welcome! If you'd like to improve the app or add new features, please follow these steps:
 
-## Join the community
+1.  **Fork the repository.**
+2.  **Create a new branch** for your feature or bug fix:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+3.  **Make your changes.**
+4.  **Test your changes thoroughly.**
+5.  **Commit your changes** with a clear and descriptive commit message:
+    ```bash
+    git commit -m "feat: Implement amazing feature"
+    ```
+6.  **Push to your forked repository:**
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+7.  **Open a Pull Request** to the main repository's `main` (or `develop`) branch.
 
-Join our community of developers creating universal apps.
+Please ensure your code adheres to the project's linting standards (run `npm run lint`).
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## License
+
+This project is currently unlicensed.
